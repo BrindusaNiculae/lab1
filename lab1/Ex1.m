@@ -13,7 +13,14 @@
 -(NSArray *)cappitalizeWordsFromArray:(NSArray *)words
 {
     //ex1
-    return nil;
+    NSMutableArray  *returnArray;
+    returnArray = [[NSMutableArray alloc] init];
+    
+    for(NSString *element in words) {
+        [returnArray addObject:[element capitalizedString]];
+    }
+    
+    return returnArray;
 }
 
 -(NSString *)linkAllWordsFromArray:(NSArray *)words usingSeparator:(NSString *)separator
