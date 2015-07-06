@@ -16,6 +16,8 @@ int main(int argc, const char * argv[]) {
         Ex1 *ex1 = [[Ex1 alloc] init];
         NSArray *array = @[@"test",@"one",@"ten"];
         NSLog(@": %@", [ex1 cappitalizeWordsFromArray:array]);
+        NSLog(@": %@", [ex1 linkAllWordsFromArray:array usingSeparator:@"~"]);
+
 //        [ex1 linkAllWordsFromArray:array usingSeparator:@"~"];
 //        [ex1 linkAndCapitalizeAllWordsFromArray:array usingSeparator:@"~"];
 //        [ex1 checkPalindrome:@"madam"];

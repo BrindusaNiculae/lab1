@@ -26,7 +26,12 @@
 -(NSString *)linkAllWordsFromArray:(NSArray *)words usingSeparator:(NSString *)separator
 {
     //ex1
-    return nil;
+    NSMutableString  *returnString;
+    returnString = [[NSMutableString alloc] init];
+    
+    returnString = [words componentsJoinedByString:separator];
+    
+    return returnString;
 }
 
 -(NSString *)linkAndCapitalizeAllWordsFromArray:(NSArray *)words usingSeparator:(NSString *)separator
