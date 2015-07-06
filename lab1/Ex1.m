@@ -57,7 +57,17 @@
 -(BOOL)checkPalindrome:(NSString *)string
 {
     //ex1
-    return NO;
+    
+    NSMutableString *reversedString;
+    reversedString = [[NSMutableString alloc] init];
+    NSUInteger charIndex = 0;
+    
+    while(string && charIndex < [string length]) {
+        NSRange subStrRange = NSMakeRange(charIndex, 1);
+        [reversedString appendString:[string substringWithRange:subStrRange]];
+        charIndex++;
+    }
+    return [string isEqualToString:reversedString];
 }
 
 -(BOOL)checkPalindromeFromCharPosition:(NSUInteger)index ofAllWordsFromArray:(NSArray *)array

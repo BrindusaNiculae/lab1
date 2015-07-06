@@ -19,6 +19,8 @@ int main(int argc, const char * argv[]) {
         NSLog(@": %@", [ex1 linkAllWordsFromArray:array usingSeparator:@"~"]);
         NSLog(@": %@", [ex1 linkAndCapitalizeAllWordsFromArray:array usingSeparator:@"~"]);
         NSLog(@": %@", [ex1 extractSubstringFromString:@"Hello World" starting:0 ending:5]);
+        NSLog([ex1 checkPalindrome:@"madam"] ? @"Yes" :@"No" );
+        NSLog([ex1 checkPalindrome:@"mad"] ? @"Yes" :@"No" );
 //        [ex1 checkPalindrome:@"madam"];
 //        [ex1 checkPalindrome:@"man"];
 //        [ex1 checkPalindromeFromCharPosition:1 ofAllWordsFromArray:array];
