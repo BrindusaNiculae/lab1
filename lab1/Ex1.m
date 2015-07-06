@@ -37,13 +37,21 @@
 -(NSString *)linkAndCapitalizeAllWordsFromArray:(NSArray *)words usingSeparator:(NSString *)separator
 {
     //ex1
-    return nil;
+    NSMutableArray  *returnArray;
+    returnArray = [[NSMutableArray alloc] init];
+
+    returnArray = [self cappitalizeWordsFromArray:words];
+    return [self linkAllWordsFromArray:returnArray usingSeparator:separator];
 }
 
 -(NSString *)extractSubstringFromString:(NSString *)string starting:(NSUInteger)startIndex ending:(NSUInteger)endIndex
 {
     //ex1
-    return nil;
+    NSMutableString  *returnString;
+    returnString = [[NSMutableString alloc] init];
+    
+    returnString = [string substringWithRange:NSMakeRange(startIndex, endIndex + 1 - startIndex)];
+    return returnString;
 }
 
 -(BOOL)checkPalindrome:(NSString *)string
