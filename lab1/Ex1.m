@@ -50,7 +50,7 @@
     NSMutableString  *returnString;
     returnString = [[NSMutableString alloc] init];
     
-    returnString = [string substringWithRange:NSMakeRange(startIndex, endIndex + 1 - startIndex)];
+    returnString = [string substringWithRange:NSMakeRange(startIndex, endIndex - startIndex)];
     return returnString;
 }
 
@@ -60,19 +60,32 @@
     
     NSMutableString *reversedString;
     reversedString = [[NSMutableString alloc] init];
-    NSUInteger charIndex = 0;
+    NSUInteger charIndex = [string length];
     
-    while(string && charIndex < [string length]) {
+    while(charIndex > 0) {
+        charIndex--;
         NSRange subStrRange = NSMakeRange(charIndex, 1);
         [reversedString appendString:[string substringWithRange:subStrRange]];
-        charIndex++;
+       
     }
+    
+    NSLog(@": %@", reversedString);
+    NSLog(@": %@", string);
     return [string isEqualToString:reversedString];
 }
 
 -(BOOL)checkPalindromeFromCharPosition:(NSUInteger)index ofAllWordsFromArray:(NSArray *)array
 {
     //ex1
-    return NO;
+    NSMutableString  *returnString;
+    returnString = [[NSMutableString alloc] init];
+    
+    
+    for(NSString *element in array) {
+        [returnString appendString:[self extractSubstringFromString:element starting:index-1 ending:index]];
+        
+    }
+     NSLog(@"Return String is: %@", returnString);
+    return [self checkPalindrome:returnString];
 }
 @end
