@@ -69,8 +69,8 @@
        
     }
     
-    NSLog(@": %@", reversedString);
-    NSLog(@": %@", string);
+    //NSLog(@": %@", reversedString);
+    //NSLog(@": %@", string);
     return [string isEqualToString:reversedString];
 }
 
@@ -82,10 +82,12 @@
     
     
     for(NSString *element in array) {
+        if(index > [element length])
+            return NO;
         [returnString appendString:[self extractSubstringFromString:element starting:index-1 ending:index]];
         
     }
-     NSLog(@"Return String is: %@", returnString);
+     //NSLog(@"Return String is: %@", returnString);
     return [self checkPalindrome:returnString];
 }
 @end
